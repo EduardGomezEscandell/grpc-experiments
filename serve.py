@@ -25,18 +25,18 @@ def serve_options():
     #      ("grpc.keepalive_timeout_ms", 3000),
     # ]
     return  [
-        ("grpc.max_connection_age_ms", 10_000),                                          
+        ("grpc.max_connection_age_ms", 10_000),                         # Makes the connection IDLE after 10s                 
 
         # ("grpc.keepalive_time_ms", 30_000),
         # ("grpc.keepalive_timeout_ms", 10_000),
         # ("grpc.http2.min_ping_interval_without_data_ms", 5_000),
-        ("grpc.max_connection_idle_ms", 2_000),
+        #("grpc.max_connection_idle_ms", 2_000),                        # No effect observed
         
-        ("grpc.max_connection_age_grace_ms", 5_000),
+        ("grpc.max_connection_age_grace_ms", 5_000),                    # Breaks the connection after 5s being IDLE
         # ("grpc.http2.max_pings_without_data", 5),
            
         # ("grpc.keepalive_permit_without_calls", 1),
-        # ("grpc.client_idle_timeout_ms", 5_000),
+        # ("grpc.client_idle_timeout_ms", 5_000),                       # No effect observed
     ]
 
 def serve():
