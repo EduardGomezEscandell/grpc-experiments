@@ -32,7 +32,7 @@ def serve_options():
         # ("grpc.http2.min_ping_interval_without_data_ms", 5_000),
         ("grpc.max_connection_idle_ms", 2_000),
         
-        #("grpc.max_connection_age_grace_ms", 5_000),
+        ("grpc.max_connection_age_grace_ms", 5_000),
         # ("grpc.http2.max_pings_without_data", 5),
            
         # ("grpc.keepalive_permit_without_calls", 1),
